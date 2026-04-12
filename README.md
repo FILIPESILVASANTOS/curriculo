@@ -9,9 +9,10 @@ Currículo pessoal desenvolvido em HTML5 e CSS3, hospedado via **GitHub Pages**.
 ## Sobre o projeto
 
 Página estática que serve como currículo e portfólio pessoal. O layout é responsivo,
-construído com o framework W3.CSS e ícones Font Awesome.
+construído com **CSS Grid** puro e ícones [Font Awesome](https://fontawesome.com/v4/).
 
 ### Seções
+
 - **Sobre Mim** — resumo profissional
 - **Experiência** — histórico de atuação profissional
 - **Educação** — formações acadêmicas e certificações
@@ -25,18 +26,26 @@ construído com o framework W3.CSS e ícones Font Awesome.
 | Tecnologia | Uso |
 |---|---|
 | HTML5 | Estrutura e semântica |
-| CSS3 | Estilização customizada |
-| W3.CSS | Framework responsivo |
+| CSS3 + CSS Grid | Layout responsivo e estilização |
+| Inter (Google Fonts) | Tipografia moderna |
 | Font Awesome 4.7 | Ícones |
+| JavaScript | Animação das barras de skills |
 | GitHub Pages | Hospedagem estática |
 
 ---
 
 ## Como executar localmente
 
+```bash
+# Clone o repositório
 git clone https://github.com/filipesilvasantos/curriculo.git
+
+# Abra o arquivo no navegador
 cd curriculo
 open index.html
+```
+
+Ou use a extensão **Live Server** no VS Code para recarregamento automático.
 
 ---
 
@@ -45,5 +54,5 @@ open index.html
 **Filipe Silva Santos**
 Analista Previdenciário · Desenvolvedor Full-Stack em formação
 
-- GitHub: github.com/filipe1990
+- GitHub: [github.com/filipe1990](https://github.com/filipe1990)
 - E-mail: filipesilvasantos1190@gmail.com
