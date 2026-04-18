@@ -196,6 +196,16 @@
     .cert-link:hover { color: var(--navy); }
     .cert-link i { font-size: 0.65rem; }
 
+    .cert-group { margin-bottom: 20px; }
+    .cert-group:last-child { margin-bottom: 0; }
+    .cert-group-label {
+      font-size: 0.67rem; font-weight: 700; color: var(--navy);
+      text-transform: uppercase; letter-spacing: 1.2px;
+      border-left: 3px solid var(--teal); padding-left: 8px;
+      margin-bottom: 8px;
+    }
+    .cert-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+
     .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .proj-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; transition: all 0.22s; }
     .proj-card:hover { border-color: var(--teal); box-shadow: 0 4px 18px rgba(14,165,160,0.13); transform: translateY(-2px); }
@@ -241,6 +251,7 @@
       .tl-item { grid-template-columns: 1fr; gap: 8px; }
       .tl-meta { text-align: left; }
       .edu-grid, .proj-grid { grid-template-columns: 1fr; }
+      .cert-cols { grid-template-columns: 1fr; }
       .edu-card.wide { grid-column: 1; }
       .foot { flex-direction: column; gap: 10px; text-align: center; }
     }
@@ -405,21 +416,79 @@
             <div class="edu-school">Universidade Católica de Brasília — UCB</div>
             <div class="edu-degree">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
             <div class="edu-period"><i class="fa fa-calendar"></i> 2018 — 2021</div>
+            <div class="cert-list">
+              <a class="cert-link" href="CERTIFICADOS/ANALISE%20E%20DESENVOLVIMENTO%20DE%20SISTEMAS.pdf" target="_blank">
+                <i class="fa fa-file-pdf-o"></i> Ver Diploma
+              </a>
+            </div>
           </div>
 
           <div class="edu-card">
             <div class="edu-school">Faculdade FOCUS</div>
             <div class="edu-degree">Pós-Graduação em Gestão Pública</div>
             <div class="edu-period"><i class="fa fa-calendar"></i> 2023 — 2024</div>
+            <div class="cert-list">
+              <a class="cert-link" href="CERTIFICADOS/GESTAO%20PUBLICA.pdf" target="_blank">
+                <i class="fa fa-file-pdf-o"></i> Ver Diploma
+              </a>
+            </div>
           </div>
 
           <div class="edu-card wide">
             <div class="edu-school">Faculdade Unimais</div>
             <div class="edu-degree">Especialização em Controladoria e Finanças Públicas</div>
             <div class="edu-period"><i class="fa fa-calendar"></i> 2021 — 2022</div>
+            <div class="cert-list">
+              <a class="cert-link" href="CERTIFICADOS/CONTROLADORIA%20E%20FINAN%C3%87AS%20PUBLICAS.pdf" target="_blank">
+                <i class="fa fa-file-pdf-o"></i> Ver Diploma
+              </a>
+            </div>
           </div>
 
         </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title"><i class="fa fa-certificate"></i><h2>Certificações Profissionais</h2></div>
+
+        <div class="cert-group">
+          <div class="cert-group-label">Contratações e Fiscalização Pública — ENAP (2024)</div>
+          <div class="cert-cols">
+            <a class="cert-link" href="CERTIFICADOS/programa_contratacoes_publicas_gestao_do_contrato_eixo_1_fiscalizando_contratacoes_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 1 — Fiscalizando Contratações</a>
+            <a class="cert-link" href="CERTIFICADOS/programa_contratacoes_publicas_gestao_do_contrato_eixo_2_fiscalizando_obras_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 2 — Fiscalizando Obras</a>
+            <a class="cert-link" href="CERTIFICADOS/programa_contratacoes_publicas_gestao_do_contrato_eixo_3_fiscalizando_contratacoes_de_tecnologia_da_informacao_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 3 — Fiscalizando Contratações de TI</a>
+            <a class="cert-link" href="CERTIFICADOS/programa_contratacoes_publicas_gestao_do_contrato_eixo_4_efetuando_alteracao_contratual_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 4 — Alteração Contratual</a>
+            <a class="cert-link" href="CERTIFICADOS/eixo_5_aplicando_sancoes_administrativas_programa_contratacoes_publicas_gestao_do_contrato_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 5 — Sanções Administrativas</a>
+            <a class="cert-link" href="CERTIFICADOS/eixo_6_encerrando_contratacoes_programa_contratacoes_publicas_gestao_do_contrato_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 6 — Encerrando Contratações</a>
+            <a class="cert-link" href="CERTIFICADOS/gestao_e_fiscalizacao_de_contratos_administrativos_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Gestão e Fiscalização de Contratos Administrativos</a>
+            <a class="cert-link" href="CERTIFICADOS/como_fiscalizar_com_eficiencia_contratos_publicos_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Como Fiscalizar com Eficiência Contratos Públicos</a>
+            <a class="cert-link" href="CERTIFICADOS/fiscalizacao_de_projetos_e_obras_de_engenharia_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Fiscalização de Projetos e Obras de Engenharia</a>
+          </div>
+        </div>
+
+        <div class="cert-group">
+          <div class="cert-group-label">Gestão Pública e Tecnologia — ENAP (2024)</div>
+          <div class="cert-cols">
+            <a class="cert-link" href="CERTIFICADOS/introducao_ao_orcamento_publico_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Introdução ao Orçamento Público</a>
+            <a class="cert-link" href="CERTIFICADOS/introducao_a_gestao_de_processos_turma_set2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Introdução à Gestão de Processos</a>
+            <a class="cert-link" href="CERTIFICADOS/sei_usar_40_turma_set2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> SEI! Usar 4.0</a>
+            <a class="cert-link" href="CERTIFICADOS/elaboracao_e_monitoramento_do_pdtic_turma_out2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Elaboração e Monitoramento do PDTIC</a>
+            <a class="cert-link" href="CERTIFICADOS/planejamento_da_contratacao_de_servicos_de_operacao_de_infraestrutura_e_de_atendimento_a_usuarios_de_tic_turma_out2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Planejamento da Contratação de Serviços TIC</a>
+          </div>
+        </div>
+
+        <div class="cert-group">
+          <div class="cert-group-label">Outros Certificados</div>
+          <div class="cert-cols">
+            <a class="cert-link" href="CERTIFICADOS/Certificado_Filipe_Silva_Santos_Gefc%2015.2025.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> GEFC — Gestão e Fiscalização de Contratos (2025)</a>
+            <a class="cert-link" href="CERTIFICADOS/Certificado_Filipe_Silva_Santos_Maemp%2001.2025.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> MAEMP (Jan/2025)</a>
+            <a class="cert-link" href="CERTIFICADOS/Certificado_Filipe_Silva_Santos_%5BGp%2007.2024.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> GP (Jul/2024)</a>
+            <a class="cert-link" href="CERTIFICADOS/Certificado_Filipe_Silva_Santos_%5BSEI%28%E2%80%93MU%E2%80%93v4%2001.2024.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> SEI — Manual do Usuário v4 (Jan/2024)</a>
+            <a class="cert-link" href="CERTIFICADOS/Certificado%20estrategia%20de%20negocios.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Estratégia de Negócios</a>
+            <a class="cert-link" href="CERTIFICADOS/Certificado%20introdu%C3%A7%C3%A3o%20a%20administra%C3%A7%C3%A3o.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Introdução à Administração</a>
+          </div>
+        </div>
+
       </div>
 
       <div class="section">
