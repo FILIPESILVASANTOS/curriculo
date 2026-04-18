@@ -8,252 +8,418 @@
   <meta name="description" content="Currículo de Filipe Silva Santos — Analista Previdenciário e Desenvolvedor Full-Stack em formação">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
+    /* ── Reset ─────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0D1B35;
+      --navy-mid:   #152444;
+      --navy-light: #1E3260;
+      --teal:       #0EA5A0;
+      --teal-dark:  #0A8580;
+      --teal-light: #DFF7F6;
+      --teal-mid:   #4ECDC4;
+      --text:       #1A202C;
+      --text-mid:   #2D3748;
+      --muted:      #718096;
+      --bg:         #E6EDF6;
+      --white:      #FFFFFF;
+      --border:     #E2E8F0;
+      --shadow:     0 24px 64px rgba(0,0,0,0.16);
+      --shadow-md:  0 8px 32px rgba(0,0,0,0.10);
+      --shadow-sm:  0 2px 12px rgba(0,0,0,0.07);
+      --r:          16px;
+      --r-sm:       8px;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #DDE3EC;
-      color: #2D3748;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
-      padding: 40px 20px;
+      padding: 48px 24px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    :root {
-      --navy:       #1A2744;
-      --navy-mid:   #243358;
-      --teal:       #0EA5A0;
-      --teal-light: #E0F7F6;
-      --teal-mid:   #4ECDC4;
-      --text:       #2D3748;
-      --muted:      #718096;
-      --border:     #EEF2F7;
-      --shadow:     0 8px 32px rgba(0,0,0,0.12);
-      --shadow-sm:  0 2px 10px rgba(0,0,0,0.07);
-    }
-
+    /* ── Layout ─────────────────────────────────────────────────── */
     .resume {
-      max-width: 1060px;
+      max-width: 1080px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 280px 1fr;
-      grid-template-rows: 1fr auto;
-      border-radius: 14px;
+      grid-template-columns: 292px 1fr;
+      border-radius: var(--r);
       overflow: hidden;
       box-shadow: var(--shadow);
     }
 
+    /* ── Sidebar ────────────────────────────────────────────────── */
     .left {
-      grid-row: 1 / 2;
-      background: linear-gradient(175deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background: linear-gradient(168deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
       color: #fff;
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
     }
 
+    .left::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14,165,160,0.14) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .left::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: -70px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(78,205,196,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── Hero ───────────────────────────────────────────────────── */
     .hero {
-      background: linear-gradient(135deg, #0c7d79 0%, var(--navy) 65%);
-      padding: 40px 24px 28px;
+      padding: 44px 28px 32px;
       text-align: center;
       position: relative;
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -1px; left: 0; right: 0;
-      height: 24px;
-      background: var(--navy-mid);
-      clip-path: ellipse(55% 100% at 50% 100%);
+    .avatar-wrap {
+      position: relative;
+      width: 96px; height: 96px;
+      margin: 0 auto 20px;
     }
+    .avatar-ring {
+      position: absolute; inset: -5px;
+      border-radius: 50%;
+      background: conic-gradient(var(--teal) 0%, var(--teal-mid) 40%, transparent 60%, var(--teal) 100%);
+      animation: ring-spin 7s linear infinite;
+    }
+    .avatar-ring::after {
+      content: '';
+      position: absolute; inset: 3px;
+      border-radius: 50%;
+      background: var(--navy-mid);
+    }
+    @keyframes ring-spin { to { transform: rotate(360deg); } }
 
     .avatar {
-      width: 88px; height: 88px;
+      position: relative;
+      width: 96px; height: 96px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-      border: 2px solid rgba(255,255,255,0.3);
+      background: linear-gradient(135deg, var(--navy-light) 0%, #0A1628 100%);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-      font-size: 1.8rem; font-weight: 700; letter-spacing: 2px;
-      color: #fff;
+      font-size: 1.55rem; font-weight: 800; letter-spacing: 3px;
+      color: var(--teal-mid);
+      z-index: 1;
     }
 
     .hero-name {
-      font-size: 1.05rem; font-weight: 700;
-      letter-spacing: 0.5px; line-height: 1.3;
-      margin-bottom: 6px;
+      font-size: 1rem; font-weight: 800;
+      letter-spacing: 0.8px; line-height: 1.3;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
     }
 
-    .hero-role { font-size: 0.75rem; opacity: 0.85; font-weight: 400; margin-bottom: 2px; }
-    .hero-sub  { font-size: 0.67rem; opacity: 0.55; margin-top: 3px; }
+    .hero-role { font-size: 0.74rem; color: var(--teal-mid); font-weight: 500; margin-bottom: 3px; }
+    .hero-sub  { font-size: 0.66rem; color: rgba(255,255,255,0.45); }
 
-    .left-body { padding: 24px; flex: 1; }
-    .l-section { margin-bottom: 28px; }
+    .hero-divider {
+      width: 36px; height: 2px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+      margin: 14px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ── Left Body ──────────────────────────────────────────────── */
+    .left-body { padding: 8px 24px 32px; flex: 1; }
+    .l-section { margin-bottom: 26px; }
     .l-section:last-child { margin-bottom: 0; }
 
     .l-title {
-      font-size: 0.6rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 2px;
+      font-size: 0.57rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 2.5px;
       color: var(--teal-mid);
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
       margin-bottom: 14px;
       display: flex; align-items: center; gap: 7px;
     }
 
+    /* ── Contact ────────────────────────────────────────────────── */
     .c-row {
       display: flex; align-items: flex-start;
-      gap: 10px; margin-bottom: 9px;
-      font-size: 0.77rem; color: rgba(255,255,255,0.72); line-height: 1.4;
+      gap: 10px; margin-bottom: 8px;
+      font-size: 0.755rem; color: rgba(255,255,255,0.68); line-height: 1.5;
     }
     .c-row i { color: var(--teal-mid); width: 14px; text-align: center; margin-top: 2px; flex-shrink: 0; }
-    .c-row a { color: rgba(255,255,255,0.72); text-decoration: none; word-break: break-all; }
+    .c-row a { color: rgba(255,255,255,0.68); text-decoration: none; word-break: break-all; transition: color 0.2s; }
     .c-row a:hover { color: var(--teal-mid); }
 
-    .skill { margin-bottom: 10px; }
-    .skill-head { display: flex; justify-content: space-between; font-size: 0.73rem; color: rgba(255,255,255,0.72); margin-bottom: 5px; }
+    /* ── Skills ─────────────────────────────────────────────────── */
+    .skill { margin-bottom: 12px; }
+    .skill-head {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.72rem; color: rgba(255,255,255,0.75); margin-bottom: 6px;
+    }
+    .skill-name { display: flex; align-items: center; gap: 7px; }
+    .skill-pct  { font-size: 0.62rem; color: var(--teal-mid); font-weight: 700; }
 
-    .track { background: rgba(255,255,255,0.09); border-radius: 20px; height: 5px; overflow: hidden; }
+    .track { background: rgba(255,255,255,0.08); border-radius: 20px; height: 5px; overflow: hidden; }
     .fill {
       height: 100%; border-radius: 20px;
-      background: linear-gradient(90deg, var(--teal), var(--teal-mid));
+      background: linear-gradient(90deg, var(--teal-dark), var(--teal-mid));
       width: 0%;
-      transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
+    /* ── Languages ──────────────────────────────────────────────── */
     .lang { margin-bottom: 11px; }
-    .lang-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.73rem; color: rgba(255,255,255,0.72); margin-bottom: 5px; }
-    .lang-lv { font-size: 0.62rem; font-weight: 600; color: var(--teal-mid); }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.65);
-      font-size: 0.65rem; padding: 4px 9px; border-radius: 20px; transition: all 0.2s;
+    .lang-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: rgba(255,255,255,0.68); margin-bottom: 5px; }
+    .lang-lv {
+      font-size: 0.59rem; font-weight: 700; color: var(--navy);
+      background: var(--teal-mid); padding: 2px 8px; border-radius: 20px;
     }
-    .tag:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
 
-    .right { grid-row: 1 / 2; background: #fff; padding: 40px 36px; }
+    /* ── Tags ───────────────────────────────────────────────────── */
+    .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tag {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.58);
+      font-size: 0.62rem; padding: 4px 9px; border-radius: 20px; transition: all 0.2s;
+    }
+    .tag:hover { background: rgba(14,165,160,0.22); border-color: var(--teal); color: var(--teal-mid); }
 
-    .section { margin-bottom: 34px; }
+    /* ── Main ───────────────────────────────────────────────────── */
+    .right { background: var(--white); padding: 44px 40px; }
+
+    .section { margin-bottom: 38px; }
     .section:last-child { margin-bottom: 0; }
 
+    /* ── Section Title ──────────────────────────────────────────── */
     .sec-title {
-      display: flex; align-items: center; gap: 10px;
-      margin-bottom: 20px; padding-bottom: 10px;
-      position: relative; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 22px; padding-bottom: 12px;
+      position: relative;
     }
     .sec-title::after {
-      content: ''; position: absolute; bottom: -1px; left: 0;
-      width: 44px; height: 2px; background: var(--teal);
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--border) 40%);
     }
-    .sec-title i { color: var(--teal); font-size: 1rem; width: 20px; text-align: center; }
-    .sec-title h2 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: var(--text); }
+    .sec-icon {
+      width: 32px; height: 32px; border-radius: var(--r-sm);
+      background: var(--teal-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal); font-size: 0.85rem; flex-shrink: 0;
+    }
+    .sec-title h2 { font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: var(--text); }
 
-    .about-p { font-size: 0.86rem; color: var(--muted); line-height: 1.85; }
-    .about-p strong { color: var(--text); font-weight: 600; }
+    /* ── Stats Bar ──────────────────────────────────────────────── */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-bottom: 38px;
+    }
+    .stat-card {
+      background: linear-gradient(135deg, var(--teal-light) 0%, #fff 100%);
+      border: 1px solid rgba(14,165,160,0.18);
+      border-radius: var(--r-sm);
+      padding: 18px 14px; text-align: center;
+      transition: all 0.25s;
+    }
+    .stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--teal); }
+    .stat-num {
+      font-size: 1.75rem; font-weight: 800;
+      color: var(--teal-dark); line-height: 1; margin-bottom: 5px;
+    }
+    .stat-label { font-size: 0.65rem; color: var(--muted); font-weight: 500; line-height: 1.35; }
 
-    .tl { display: flex; flex-direction: column; gap: 22px; }
-    .tl-item { display: grid; grid-template-columns: 100px 1fr; gap: 16px; }
+    /* ── About ──────────────────────────────────────────────────── */
+    .about-p { font-size: 0.85rem; color: var(--muted); line-height: 1.9; }
+    .about-p strong { color: var(--text-mid); font-weight: 600; }
+
+    /* ── Timeline ───────────────────────────────────────────────── */
+    .tl { display: flex; flex-direction: column; gap: 24px; }
+    .tl-item { display: grid; grid-template-columns: 92px 1fr; gap: 0 20px; }
+
     .tl-meta { text-align: right; padding-top: 3px; }
-    .tl-date { font-size: 0.7rem; color: var(--muted); font-weight: 500; line-height: 1.5; }
+    .tl-date { font-size: 0.68rem; color: var(--muted); font-weight: 500; line-height: 1.6; }
     .tl-badge {
       display: inline-block; background: var(--teal); color: #fff;
-      font-size: 0.57rem; font-weight: 700; padding: 2px 7px; border-radius: 20px;
-      text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;
+      font-size: 0.54rem; font-weight: 700; padding: 2px 7px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.5px; margin-top: 5px;
+      animation: badge-pulse 2.5s ease-in-out infinite;
     }
-    .tl-body { padding-left: 18px; border-left: 2px solid var(--border); position: relative; }
-    .tl-body::before {
-      content: ''; position: absolute; left: -6px; top: 6px;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--teal); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--teal);
+    @keyframes badge-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(14,165,160,0.45); }
+      50%       { box-shadow: 0 0 0 6px rgba(14,165,160,0); }
     }
-    .tl-role { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-    .tl-org  { font-size: 0.78rem; color: var(--teal); font-weight: 600; margin-bottom: 8px; }
-    .tl-desc { font-size: 0.79rem; color: var(--muted); line-height: 1.7; }
-    .tl-desc ul { padding-left: 14px; }
-    .tl-desc ul li { margin-bottom: 3px; }
 
+    .tl-body {
+      padding-left: 20px;
+      border-left: 2px solid var(--border);
+      position: relative;
+    }
+    .tl-body::before {
+      content: ''; position: absolute; left: -7px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--teal); border: 2.5px solid var(--white);
+      box-shadow: 0 0 0 3px var(--teal);
+    }
+    .tl-role  { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 1px; }
+    .tl-org   { font-size: 0.76rem; color: var(--teal); font-weight: 600; margin-bottom: 10px; }
+    .tl-desc  { font-size: 0.78rem; color: var(--muted); line-height: 1.78; }
+    .tl-desc ul { padding-left: 14px; }
+    .tl-desc ul li { margin-bottom: 4px; }
+
+    /* ── Education ──────────────────────────────────────────────── */
     .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .edu-card {
-      border: 1px solid var(--border); border-radius: 8px;
-      padding: 14px 16px 14px 19px; position: relative; overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      padding: 16px 18px 16px 21px; position: relative; overflow: hidden;
+      transition: all 0.25s;
     }
-    .edu-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--teal); }
-    .edu-card:hover { border-color: var(--teal); box-shadow: var(--shadow-sm); }
+    .edu-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(180deg, var(--teal), var(--teal-mid));
+    }
+    .edu-card:hover { border-color: var(--teal); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
     .edu-card.wide { grid-column: 1 / -1; }
-    .edu-school { font-size: 0.84rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-    .edu-degree { font-size: 0.77rem; color: var(--muted); margin-bottom: 5px; }
-    .edu-period { font-size: 0.68rem; color: var(--teal); font-weight: 600; display: flex; align-items: center; gap: 5px; margin-bottom: 7px; }
-    .now-dot { display: inline-block; background: var(--teal); color: #fff; font-size: 0.57rem; font-weight: 700; padding: 1px 6px; border-radius: 20px; text-transform: uppercase; }
+    .edu-school  { font-size: 0.86rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .edu-degree  { font-size: 0.76rem; color: var(--muted); margin-bottom: 6px; }
+    .edu-period  {
+      font-size: 0.66rem; color: var(--teal); font-weight: 600;
+      display: flex; align-items: center; gap: 5px; margin-bottom: 8px;
+    }
+    .now-dot {
+      display: inline-block; background: var(--teal); color: #fff;
+      font-size: 0.54rem; font-weight: 700; padding: 1px 6px;
+      border-radius: 20px; text-transform: uppercase;
+    }
+
     .cert-list { display: flex; flex-direction: column; gap: 3px; }
-    .cert-link { display: flex; align-items: center; gap: 6px; font-size: 0.73rem; color: var(--teal); text-decoration: none; padding: 2px 0; }
+    .cert-link {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.72rem; color: var(--teal); text-decoration: none;
+      padding: 2px 0; transition: color 0.2s;
+    }
     .cert-link:hover { color: var(--navy); }
-    .cert-link i { font-size: 0.65rem; }
+    .cert-link i { font-size: 0.63rem; }
 
-    .cert-group { margin-bottom: 20px; }
+    /* ── Certifications ─────────────────────────────────────────── */
+    .cert-group { margin-bottom: 18px; }
     .cert-group:last-child { margin-bottom: 0; }
+
     .cert-group-label {
-      font-size: 0.67rem; font-weight: 700; color: var(--navy);
-      text-transform: uppercase; letter-spacing: 1.2px;
-      border-left: 3px solid var(--teal); padding-left: 8px;
-      margin-bottom: 8px;
+      font-size: 0.62rem; font-weight: 700;
+      color: var(--navy-light); text-transform: uppercase; letter-spacing: 1.5px;
+      background: var(--teal-light);
+      border-left: 3px solid var(--teal);
+      padding: 6px 10px;
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      margin-bottom: 10px;
+      display: flex; align-items: center; gap: 7px;
     }
-    .cert-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
 
-    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .proj-card { border: 1px solid var(--border); border-radius: 8px; padding: 16px; transition: all 0.22s; }
-    .proj-card:hover { border-color: var(--teal); box-shadow: 0 4px 18px rgba(14,165,160,0.13); transform: translateY(-2px); }
-    .proj-head { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
-    .proj-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--teal-light); display: flex; align-items: center; justify-content: center; color: var(--teal); font-size: 0.9rem; flex-shrink: 0; }
-    .proj-name { font-size: 0.84rem; font-weight: 700; color: var(--text); }
-    .proj-name a { color: inherit; text-decoration: none; }
+    .cert-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1px 14px; }
+
+    /* ── Projects ───────────────────────────────────────────────── */
+    .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .proj-card {
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      padding: 18px; transition: all 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .proj-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--teal-mid));
+      opacity: 0; transition: opacity 0.25s;
+    }
+    .proj-card:hover { border-color: var(--teal); box-shadow: 0 6px 28px rgba(14,165,160,0.13); transform: translateY(-3px); }
+    .proj-card:hover::before { opacity: 1; }
+    .proj-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .proj-icon {
+      width: 36px; height: 36px; border-radius: var(--r-sm);
+      background: var(--teal-light);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal); font-size: 0.95rem; flex-shrink: 0;
+    }
+    .proj-name { font-size: 0.86rem; font-weight: 700; color: var(--text); }
+    .proj-name a { color: inherit; text-decoration: none; transition: color 0.2s; }
     .proj-name a:hover { color: var(--teal); }
-    .proj-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+    .proj-desc { font-size: 0.76rem; color: var(--muted); line-height: 1.65; margin-bottom: 12px; }
     .tech-stack { display: flex; flex-wrap: wrap; gap: 5px; }
-    .tech { background: var(--border); color: #4A5568; font-size: 0.65rem; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
-
-    .foot {
-      grid-column: 1 / -1; background: var(--navy);
-      padding: 14px 36px; display: flex; align-items: center; justify-content: space-between;
+    .tech {
+      background: var(--border); color: #4A5568;
+      font-size: 0.63rem; font-weight: 600; padding: 2px 8px; border-radius: 4px;
+      transition: all 0.2s;
     }
-    .foot-copy { font-size: 0.72rem; color: rgba(255,255,255,0.35); }
-    .foot-links { display: flex; gap: 16px; }
-    .foot-links a { color: rgba(255,255,255,0.35); font-size: 1.05rem; transition: color 0.2s; }
+    .tech:hover { background: var(--teal-light); color: var(--teal-dark); }
+
+    /* ── Footer ─────────────────────────────────────────────────── */
+    .foot {
+      grid-column: 1 / -1;
+      background: var(--navy);
+      padding: 16px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .foot-copy { font-size: 0.70rem; color: rgba(255,255,255,0.28); }
+    .foot-links { display: flex; gap: 18px; }
+    .foot-links a { color: rgba(255,255,255,0.28); font-size: 1.1rem; transition: color 0.2s; }
     .foot-links a:hover { color: var(--teal-mid); }
 
+    /* ── PDF Button ─────────────────────────────────────────────── */
     .btn-print {
       position: fixed; bottom: 28px; right: 28px;
-      background: var(--teal); color: #fff;
-      border: none; border-radius: 50px; padding: 11px 20px;
-      font-size: 0.79rem; font-weight: 600; cursor: pointer;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: #fff; border: none; border-radius: 50px; padding: 12px 22px;
+      font-size: 0.78rem; font-weight: 700; cursor: pointer;
       display: flex; align-items: center; gap: 8px;
-      box-shadow: 0 4px 18px rgba(14,165,160,0.45);
-      transition: all 0.22s; font-family: 'Inter', sans-serif; z-index: 100;
+      box-shadow: 0 6px 28px rgba(14,165,160,0.50);
+      transition: all 0.25s; font-family: 'Inter', sans-serif; z-index: 100;
+      letter-spacing: 0.3px;
     }
-    .btn-print:hover { background: var(--navy); box-shadow: 0 4px 20px rgba(26,39,68,0.35); transform: translateY(-2px); }
+    .btn-print:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(14,165,160,0.58); }
 
+    /* ── Scroll Reveal ──────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Print ──────────────────────────────────────────────────── */
     @media print {
       body { background: #fff; padding: 0; }
       .resume { box-shadow: none; max-width: 100%; border-radius: 0; }
       .btn-print { display: none; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .stat-card:hover, .edu-card:hover, .proj-card:hover { transform: none; }
+      .avatar-ring { animation: none; }
+      .tl-badge { animation: none; }
     }
 
-    @media (max-width: 740px) {
+    /* ── Mobile ─────────────────────────────────────────────────── */
+    @media (max-width: 760px) {
       body { padding: 0; }
       .resume { grid-template-columns: 1fr; border-radius: 0; }
-      .right { padding: 28px 20px; }
-      .tl-item { grid-template-columns: 1fr; gap: 8px; }
+      .right { padding: 30px 20px; }
+      .tl-item { grid-template-columns: 80px 1fr; }
       .tl-meta { text-align: left; }
-      .edu-grid, .proj-grid { grid-template-columns: 1fr; }
-      .cert-cols { grid-template-columns: 1fr; }
+      .edu-grid, .proj-grid, .stats-bar { grid-template-columns: 1fr; }
       .edu-card.wide { grid-column: 1; }
-      .foot { flex-direction: column; gap: 10px; text-align: center; }
+      .cert-cols { grid-template-columns: 1fr; }
+      .foot { flex-direction: column; gap: 10px; text-align: center; padding: 16px 20px; }
     }
   </style>
 </head>
@@ -262,12 +428,17 @@
 
   <div class="resume">
 
+    <!-- ── Sidebar ──────────────────────────────────────────────── -->
     <aside class="left">
       <div class="hero">
-        <div class="avatar">FS</div>
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar">FS</div>
+        </div>
         <h1 class="hero-name">FILIPE SILVA SANTOS</h1>
         <p class="hero-role">Analista Previdenciário</p>
         <p class="hero-sub">Desenvolvedor Full-Stack em formação</p>
+        <div class="hero-divider"></div>
       </div>
 
       <div class="left-body">
@@ -290,29 +461,47 @@
         </div>
 
         <div class="l-section">
-          <div class="l-title"><i class="fa fa-code"></i> Habilidades</div>
+          <div class="l-title"><i class="fa fa-code"></i> Habilidades Técnicas</div>
           <div class="skill">
-            <div class="skill-head"><span>HTML5</span><span>60%</span></div>
+            <div class="skill-head">
+              <span class="skill-name"><i class="fa fa-html5"></i> HTML5</span>
+              <span class="skill-pct">60%</span>
+            </div>
             <div class="track"><div class="fill" data-w="60"></div></div>
           </div>
           <div class="skill">
-            <div class="skill-head"><span>CSS3</span><span>60%</span></div>
+            <div class="skill-head">
+              <span class="skill-name"><i class="fa fa-css3"></i> CSS3</span>
+              <span class="skill-pct">60%</span>
+            </div>
             <div class="track"><div class="fill" data-w="60"></div></div>
           </div>
           <div class="skill">
-            <div class="skill-head"><span>JavaScript</span><span>45%</span></div>
+            <div class="skill-head">
+              <span class="skill-name"><i class="fa fa-bolt"></i> JavaScript</span>
+              <span class="skill-pct">45%</span>
+            </div>
             <div class="track"><div class="fill" data-w="45"></div></div>
           </div>
           <div class="skill">
-            <div class="skill-head"><span>Python</span><span>55%</span></div>
+            <div class="skill-head">
+              <span class="skill-name"><i class="fa fa-terminal"></i> Python</span>
+              <span class="skill-pct">55%</span>
+            </div>
             <div class="track"><div class="fill" data-w="55"></div></div>
           </div>
           <div class="skill">
-            <div class="skill-head"><span>Git &amp; GitHub</span><span>50%</span></div>
+            <div class="skill-head">
+              <span class="skill-name"><i class="fa fa-git"></i> Git &amp; GitHub</span>
+              <span class="skill-pct">50%</span>
+            </div>
             <div class="track"><div class="fill" data-w="50"></div></div>
           </div>
           <div class="skill">
-            <div class="skill-head"><span>SQL</span><span>45%</span></div>
+            <div class="skill-head">
+              <span class="skill-name"><i class="fa fa-database"></i> SQL</span>
+              <span class="skill-pct">45%</span>
+            </div>
             <div class="track"><div class="fill" data-w="45"></div></div>
           </div>
         </div>
@@ -343,6 +532,8 @@
             <span class="tag">Finanças Públicas</span>
             <span class="tag">Planejamento</span>
             <span class="tag">Controle Interno</span>
+            <span class="tag">Fiscalização</span>
+            <span class="tag">Contratações Públicas</span>
             <span class="tag">Resolução de Problemas</span>
           </div>
         </div>
@@ -350,10 +541,31 @@
       </div>
     </aside>
 
+    <!-- ── Main ─────────────────────────────────────────────────── -->
     <main class="right">
 
-      <div class="section">
-        <div class="sec-title"><i class="fa fa-user"></i><h2>Sobre Mim</h2></div>
+      <!-- Stats -->
+      <div class="stats-bar reveal">
+        <div class="stat-card">
+          <div class="stat-num" data-count="1" data-suffix="">0</div>
+          <div class="stat-label">Ano de Experiência Profissional</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="20" data-suffix="+">0</div>
+          <div class="stat-label">Certificados e Cursos Concluídos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="3" data-suffix="">0</div>
+          <div class="stat-label">Formações Acadêmicas</div>
+        </div>
+      </div>
+
+      <!-- Sobre -->
+      <div class="section reveal">
+        <div class="sec-title">
+          <div class="sec-icon"><i class="fa fa-user"></i></div>
+          <h2>Sobre Mim</h2>
+        </div>
         <p class="about-p">
           Graduado em <strong>Análise e Desenvolvimento de Sistemas</strong> pela Universidade Católica de Brasília,
           com especializações em <strong>Controladoria e Finanças Públicas</strong> e <strong>Gestão Pública</strong>.
@@ -364,8 +576,12 @@
         </p>
       </div>
 
-      <div class="section">
-        <div class="sec-title"><i class="fa fa-briefcase"></i><h2>Experiência</h2></div>
+      <!-- Experiência -->
+      <div class="section reveal">
+        <div class="sec-title">
+          <div class="sec-icon"><i class="fa fa-briefcase"></i></div>
+          <h2>Experiência</h2>
+        </div>
         <div class="tl">
           <div class="tl-item">
             <div class="tl-meta">
@@ -388,15 +604,19 @@
         </div>
       </div>
 
-      <div class="section">
-        <div class="sec-title"><i class="fa fa-graduation-cap"></i><h2>Educação</h2></div>
+      <!-- Educação -->
+      <div class="section reveal">
+        <div class="sec-title">
+          <div class="sec-icon"><i class="fa fa-graduation-cap"></i></div>
+          <h2>Educação</h2>
+        </div>
         <div class="edu-grid">
 
           <div class="edu-card wide">
             <div class="edu-school">Digital Innovation One — DIO</div>
             <div class="edu-degree">Formação em Desenvolvimento Full-Stack</div>
             <div class="edu-period">
-              <i class="fa fa-circle" style="font-size:0.45rem;"></i>
+              <i class="fa fa-circle" style="font-size:0.4rem;"></i>
               Em andamento &nbsp;<span class="now-dot">Atual</span>
             </div>
             <div class="cert-list">
@@ -448,11 +668,17 @@
         </div>
       </div>
 
-      <div class="section">
-        <div class="sec-title"><i class="fa fa-certificate"></i><h2>Certificações Profissionais</h2></div>
+      <!-- Certificações -->
+      <div class="section reveal">
+        <div class="sec-title">
+          <div class="sec-icon"><i class="fa fa-certificate"></i></div>
+          <h2>Certificações Profissionais</h2>
+        </div>
 
         <div class="cert-group">
-          <div class="cert-group-label">Contratações e Fiscalização Pública — ENAP (2024)</div>
+          <div class="cert-group-label">
+            <i class="fa fa-balance-scale"></i> Contratações e Fiscalização Pública — ENAP (2024)
+          </div>
           <div class="cert-cols">
             <a class="cert-link" href="CERTIFICADOS/programa_contratacoes_publicas_gestao_do_contrato_eixo_1_fiscalizando_contratacoes_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 1 — Fiscalizando Contratações</a>
             <a class="cert-link" href="CERTIFICADOS/programa_contratacoes_publicas_gestao_do_contrato_eixo_2_fiscalizando_obras_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 2 — Fiscalizando Obras</a>
@@ -460,14 +686,16 @@
             <a class="cert-link" href="CERTIFICADOS/programa_contratacoes_publicas_gestao_do_contrato_eixo_4_efetuando_alteracao_contratual_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 4 — Alteração Contratual</a>
             <a class="cert-link" href="CERTIFICADOS/eixo_5_aplicando_sancoes_administrativas_programa_contratacoes_publicas_gestao_do_contrato_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 5 — Sanções Administrativas</a>
             <a class="cert-link" href="CERTIFICADOS/eixo_6_encerrando_contratacoes_programa_contratacoes_publicas_gestao_do_contrato_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Eixo 6 — Encerrando Contratações</a>
-            <a class="cert-link" href="CERTIFICADOS/gestao_e_fiscalizacao_de_contratos_administrativos_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Gestão e Fiscalização de Contratos Administrativos</a>
-            <a class="cert-link" href="CERTIFICADOS/como_fiscalizar_com_eficiencia_contratos_publicos_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Como Fiscalizar com Eficiência Contratos Públicos</a>
-            <a class="cert-link" href="CERTIFICADOS/fiscalizacao_de_projetos_e_obras_de_engenharia_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Fiscalização de Projetos e Obras de Engenharia</a>
+            <a class="cert-link" href="CERTIFICADOS/gestao_e_fiscalizacao_de_contratos_administrativos_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Gestão e Fiscalização de Contratos</a>
+            <a class="cert-link" href="CERTIFICADOS/como_fiscalizar_com_eficiencia_contratos_publicos_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Como Fiscalizar com Eficiência</a>
+            <a class="cert-link" href="CERTIFICADOS/fiscalizacao_de_projetos_e_obras_de_engenharia_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Fiscalização de Projetos e Obras</a>
           </div>
         </div>
 
         <div class="cert-group">
-          <div class="cert-group-label">Gestão Pública e Tecnologia — ENAP (2024)</div>
+          <div class="cert-group-label">
+            <i class="fa fa-cogs"></i> Gestão Pública e Tecnologia — ENAP (2024)
+          </div>
           <div class="cert-cols">
             <a class="cert-link" href="CERTIFICADOS/introducao_ao_orcamento_publico_turma_ago2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Introdução ao Orçamento Público</a>
             <a class="cert-link" href="CERTIFICADOS/introducao_a_gestao_de_processos_turma_set2024_certificado.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> Introdução à Gestão de Processos</a>
@@ -478,7 +706,9 @@
         </div>
 
         <div class="cert-group">
-          <div class="cert-group-label">Outros Certificados</div>
+          <div class="cert-group-label">
+            <i class="fa fa-star"></i> Outros Certificados
+          </div>
           <div class="cert-cols">
             <a class="cert-link" href="CERTIFICADOS/Certificado_Filipe_Silva_Santos_Gefc%2015.2025.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> GEFC — Gestão e Fiscalização de Contratos (2025)</a>
             <a class="cert-link" href="CERTIFICADOS/Certificado_Filipe_Silva_Santos_Maemp%2001.2025.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i> MAEMP (Jan/2025)</a>
@@ -491,8 +721,12 @@
 
       </div>
 
-      <div class="section">
-        <div class="sec-title"><i class="fa fa-code-fork"></i><h2>Projetos</h2></div>
+      <!-- Projetos -->
+      <div class="section reveal">
+        <div class="sec-title">
+          <div class="sec-icon"><i class="fa fa-code-fork"></i></div>
+          <h2>Projetos</h2>
+        </div>
         <div class="proj-grid">
 
           <div class="proj-card">
@@ -553,13 +787,50 @@
   </button>
 
   <script>
+    /* Skill bars */
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.querySelectorAll('.fill').forEach(el => {
           el.style.width = el.dataset.w + '%';
         });
-      }, 350);
+      }, 400);
     });
+
+    /* Scroll reveal */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (!entry.isIntersecting) return;
+        setTimeout(() => entry.target.classList.add('visible'), i * 90);
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* Animated counters */
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('[data-count]').forEach(el => {
+          const target = parseInt(el.dataset.count);
+          const suffix = el.dataset.suffix || '';
+          const duration = 1400;
+          const steps = 40;
+          const interval = duration / steps;
+          let step = 0;
+          const timer = setInterval(() => {
+            step++;
+            const value = Math.round(target * (step / steps));
+            el.textContent = value + suffix;
+            if (step >= steps) { el.textContent = target + suffix; clearInterval(timer); }
+          }, interval);
+        });
+        counterObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    const statsBar = document.querySelector('.stats-bar');
+    if (statsBar) counterObserver.observe(statsBar);
   </script>
 
 </body>
