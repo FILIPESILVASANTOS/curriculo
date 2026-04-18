@@ -115,11 +115,15 @@
       position: relative;
       width: 96px; height: 96px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy-light) 0%, #0A1628 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.55rem; font-weight: 800; letter-spacing: 3px;
-      color: var(--teal-mid);
+      background: var(--navy-mid);
+      overflow: hidden;
       z-index: 1;
+    }
+    .avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .hero-name {
@@ -433,7 +437,7 @@
       <div class="hero">
         <div class="avatar-wrap">
           <div class="avatar-ring"></div>
-          <div class="avatar">FS</div>
+          <div class="avatar"><img src="foto.jpg" alt="Filipe Silva Santos"></div>
         </div>
         <h1 class="hero-name">FILIPE SILVA SANTOS</h1>
         <p class="hero-role">Analista Previdenciário</p>
@@ -448,7 +452,11 @@
           <div class="c-row"><i class="fa fa-map-marker"></i><span>Brasília, DF</span></div>
           <div class="c-row">
             <i class="fa fa-envelope"></i>
-            <a href="mailto:filipesilvasantos1190@gmail.com">filipesilvasantos1190@gmail.com</a>
+            <a href="mailto:filipesilvasantos1990@gmail.com">filipesilvasantos1990@gmail.com</a>
+          </div>
+          <div class="c-row">
+            <i class="fa fa-envelope-o"></i>
+            <a href="mailto:filipe.santos@iprev.df.gov.br">filipe.santos@iprev.df.gov.br</a>
           </div>
           <div class="c-row">
             <i class="fa fa-phone"></i>
@@ -776,7 +784,8 @@
       <span class="foot-copy">Filipe Silva Santos &copy; 2025</span>
       <div class="foot-links">
         <a href="https://github.com/FILIPESILVASANTOS" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
-        <a href="mailto:filipesilvasantos1190@gmail.com" title="E-mail"><i class="fa fa-envelope"></i></a>
+        <a href="mailto:filipesilvasantos1990@gmail.com" title="E-mail pessoal"><i class="fa fa-envelope"></i></a>
+        <a href="mailto:filipe.santos@iprev.df.gov.br" title="E-mail profissional"><i class="fa fa-envelope-o"></i></a>
       </div>
     </footer>
 
